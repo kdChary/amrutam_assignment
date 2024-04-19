@@ -1,13 +1,13 @@
-
+import {Switch,Route} from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Header'
+import FindDoctors from './components/FindDoctorsPage'
 
 
 // write your code here
 const App = () => (
-  <>
-   <Navbar />
-  </>
+  <Switch>
+   <Route exact path="/"  component={FindDoctors}/>
+  </Switch>
 )
 
 export default App

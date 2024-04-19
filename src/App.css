@@ -16,3 +16,7 @@ body {
 .link-item {
   text-decoration: none;
 }
+button{
+  cursor: pointer;
+  outline: none;
+}

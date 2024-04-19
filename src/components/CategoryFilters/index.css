@@ -1,0 +1,17 @@
+.filter-dropdown{
+    height: 29px;
+    width: 86px; 
+    border: solid 1.5px #f3f3f3;
+    outline: none;
+    border-radius: 5px;
+    background: #f3f3f3;
+
+    font-family: 'Arial Narrow';
+    font-weight: 600;
+    font-size: 11px;
+    
+    color: #767676;
+    letter-spacing: 0.5%;
+    cursor: pointer;
+    padding: 3px 7px;
+}

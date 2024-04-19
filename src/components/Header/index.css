@@ -8,6 +8,13 @@
     height: 10vmin;
 }
 
+/* Styling navigation buttons */
+.nav-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
 .option{
     border: none;
     background: transparent;
@@ -25,4 +32,50 @@
     font-weight: 900;
     color: #1e293b;
     letter-spacing: 0.6px;
+}
+
+/* Styling Log in/out options */
+.log-options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 190px;
+    margin-right: 23px;
+}
+.login-btn{
+    border: solid 2px #3a643b;
+    border-radius: 5px;
+    background: transparent;
+
+    font-family: "Inter";
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: #3a643b;
+
+    padding: 2px 7px;
+    width: 65px;
+    height: 28px;
+    transition: 1s ease-in-out;
+}
+.sign-up-btn{
+    border: solid 2px #3a643b;
+    border-radius: 5px;
+    background: #3a643b;
+
+    font-family: "Inter";
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: #fff;
+
+    padding: 2px 11px;
+    height: 28px;
+    transition: 1s ease-in-out;
+}
+.sign-up-btn:hover{
+    font-weight: 900;
+}
+.login-btn:hover{
+    font-weight: 900;
 }
