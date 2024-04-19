@@ -11,8 +11,14 @@ import Options from '../CategoryFilters';
 import ProfileCard from '../DoctorProfile';
 
 class FindDoctors extends Component {
-    state = {}
+    state = {activeFilters:[]}
 
+    //Function to add filters
+    onChangeFilter = val =>{
+        this.setState(prevState => ({activeFilters:[...prevState.activeFilters,val]}))
+    }
+
+    //Banner details section 
     bannerSection = () => (
         <div className="filter-banner">
             <h2 className="banner-heading">Find expert Doctors for an In-clinic session here </h2>
@@ -38,9 +44,10 @@ class FindDoctors extends Component {
         </div>
     )
 
+    //Contains Filter Categories 
     filtersSection = () => (
         <div className="filters-container">
-            {filters.map(item => (<Options key={item.title} options={item} />))}
+            {filters.map(item => (<Options key={item.title} optionData={item} addFilter={this.onChangeFilter}/>))}
             <select id="all" className='all-options'>
                 <option value=''>All Filters</option>
                 <option value="allDoctors">All Doctors</option>
@@ -50,10 +57,19 @@ class FindDoctors extends Component {
         </div>
     )
 
-    selectedFilters = () => (
+    //Displays the applied Filters
+    selectedFilters = () => {
+        const {activeFilters} = this.state
+
+        return(
         <div className="selected-filter-card">
+            
+            {activeFilters.length ? activeFilters.map(filter => (<div className='selected-filter' key={filter}>
+                <p className="filter-text" >{filter}</p>
+                <MdClose />
+            </div>)) : <>
             <div className='selected-filter'>
-                <p className="filter-text">Hair care</p>
+                <p className="filter-text">Hair</p>
                 <MdClose/>
             </div>
             <div className='selected-filter'>
@@ -63,10 +79,13 @@ class FindDoctors extends Component {
             <div className='selected-filter'>
                 <p className="filter-text">Hindi</p>
                 <MdClose/>
-            </div>
+            </div> 
+            </>}
+            
         </div>
-    )
+    )}
 
+    //Renders the Profile card of Doctors. 
     doctorsProfileCard = () =>(
         <ul className='profile-card-container'>
             {doctorsList.map(doctor => (<ProfileCard key={doctor.name} doctorData={doctor}/>))}

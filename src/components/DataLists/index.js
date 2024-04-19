@@ -15,11 +15,11 @@ const filters = [
         optn5:'',
     },{
         title:"Fees",
-        optn1:"499-999",
-        optn2:"1000-1599",
-        optn3:"1599-1799",
-        optn4:'1799-1999',
-        optn5:'1999-2599',
+        optn1:`₹499`,
+        optn2:"₹999",
+        optn3:"₹1599",
+        optn4:'₹1999',
+        optn5:'₹2599',
     },{
         title:"Languages",
         optn1:"Telugu",
@@ -62,7 +62,7 @@ const doctorsList = [
         experience:"24 years of Experience",
         languages:"Speaks: English, Telugu, Tamil",
         videoFee:"1199",
-        chatFee:"Free",
+        chatFee:"₹299",
     }
 ]
 

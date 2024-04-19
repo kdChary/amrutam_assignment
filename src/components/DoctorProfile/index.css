@@ -13,6 +13,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    transition:2s width 2s, height 2s, ease-in-out;
+    cursor: pointer;
+}
+.profile-card:hover{
+    width:322px;
+    height: 411px;
+    border: solid 2.3px #fff5dc;
+    border-radius: 17px;
+    box-shadow: 1px 6px 13px 1px #08d50c;
 }
 
 .card{

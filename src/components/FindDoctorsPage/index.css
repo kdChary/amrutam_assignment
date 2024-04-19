@@ -151,6 +151,7 @@
     align-items: center;
     
     padding: 3px 7px;
+    cursor: pointer;
 }
 
 .filter-text{
