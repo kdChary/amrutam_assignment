@@ -3,42 +3,12 @@ import {Component} from 'react'
 import { FaLocationDot } from "react-icons/fa6";
 import { MdClose } from "react-icons/md";
 import { BsArrowRightShort } from "react-icons/bs";
+import { filters,doctorsList } from '../DataLists';
 
 import './index.css'
 import Navbar from '../Header'
 import Options from '../CategoryFilters';
-
-const filters = [
-    {
-        title:"Expertise",
-        optn1:"skin",
-        optn2:"fertility",
-        optn3:"heart",
-        optn4:'ent',
-        optn5:'gynecology',
-    },{
-        title:"Gender",
-        optn1:"Male",
-        optn2:"Female",
-        optn3:"Neutral",
-        optn4:'',
-        optn5:'',
-    },{
-        title:"Fees",
-        optn1:"499-999",
-        optn2:"1000-1599",
-        optn3:"1599-1799",
-        optn4:'1799-1999',
-        optn5:'1999-2599',
-    },{
-        title:"Languages",
-        optn1:"Telugu",
-        optn2:"English",
-        optn3:"Tamil",
-        optn4:'Hindi',
-        optn5:'Kannada',
-    }
-]
+import ProfileCard from '../DoctorProfile';
 
 class FindDoctors extends Component {
     state = {}
@@ -91,10 +61,16 @@ class FindDoctors extends Component {
                 <MdClose/>
             </div>
             <div className='selected-filter'>
-                <p className="filter-text">Telugu</p>
+                <p className="filter-text">Hindi</p>
                 <MdClose/>
             </div>
         </div>
+    )
+
+    doctorsProfileCard = () =>(
+        <ul className='profile-card-container'>
+            {doctorsList.map(doctor => (<ProfileCard key={doctor.name} doctorData={doctor}/>))}
+        </ul>
     )
 
     render(){
@@ -105,7 +81,7 @@ class FindDoctors extends Component {
                 {this.bannerSection()}
                 {this.filtersSection()}
                 {this.selectedFilters()}
-                Hello Render me !!
+                {this.doctorsProfileCard()}
             </div>
             </>
         )
